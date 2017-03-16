@@ -1,4 +1,15 @@
+require 'prime'
+
 class Fibonacci
+	def primeCheck(n)
+		if(n.prime?)
+			prime = " prime"
+		else
+			prime = " not prime"
+		end
+		return prime
+	end
+
 	def atIndex(n)
 		first = 0
 		second = 1
@@ -9,7 +20,7 @@ class Fibonacci
 			second = temp + second
 		end
 
-		return first
+		puts "#{first}, #{primeCheck(first)}"
 	end
 
 	def range(n)
