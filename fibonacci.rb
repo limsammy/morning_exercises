@@ -2,7 +2,7 @@ require 'prime'
 
 class Fibonacci
 	def primeCheck(n)
-		if(n.prime?)
+		if n.prime?
 			prime = " prime"
 		else
 			prime = " not prime"
