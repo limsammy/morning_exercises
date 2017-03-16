@@ -29,8 +29,16 @@ class Fibonacci
 			puts final
 		end
 	end
+
+	def inputReader
+		puts "Please enter amount of fibonacci sequence to print"
+		print ">"
+		input = gets.chomp.to_i
+		return range(input)
+	end
 end
 
 fib = Fibonacci.new
 
-fib.range(25)
+# fib.range(25)
+fib.inputReader
