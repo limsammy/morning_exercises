@@ -1,15 +1,15 @@
 class Fibonacci
 	def atIndex(n)
-		a = 0
-		b = 1
+		first = 0
+		second = 1
 
 		n.times do
-			temp = a
-			a = b
-			b = temp + b
+			temp = first
+			first = second
+			second = temp + second
 		end
 
-		return a
+		return first
 	end
 
 	def range(n)
