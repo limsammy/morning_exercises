@@ -15,7 +15,7 @@ class LeapYear
     
 
     if leaps.size != number_of_leaps
-      leaps = leaps[0..24]
+      leaps = leaps[0..number_of_leaps-1]
     end
     p leaps
   end
