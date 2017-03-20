@@ -12,11 +12,11 @@ class LeapYear
         leaps << year
       end
     end
-    
 
     if leaps.size != number_of_leaps
       leaps = leaps[0..number_of_leaps-1]
     end
+
     p leaps
   end
 end
