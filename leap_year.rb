@@ -2,29 +2,23 @@ require 'pry'
 
 class LeapYear
 
-  def predict(leap_years)
+  def predict(number_of_leaps)
     start_year = 2017
-    leap_count = 0
-    years = []
+    end_year = 3000
+    leaps = []
 
-    while leap_count < leap_years do
-      leap_years.times do |year|
-        year += start_year
-
-        if year % 4 == 0
-          leap_count += 1
-          years << year
-          # puts "#{year} is a leap year!"
-        elsif year % 400 == 0
-          leap_count += 1
-          years << year
-          # puts "#{year} is a leap year!"
-        end
+    (start_year..end_year).each do |year|
+      if year % 400 == 0 || (year % 100 != 0 && year % 4 ==0 )
+        leaps << year
       end
     end
-    puts years.size
-  end
+    
 
+    if leaps.size != number_of_leaps
+      leaps = leaps[0..24]
+    end
+    p leaps
+  end
 end
 
 leap = LeapYear.new
