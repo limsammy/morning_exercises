@@ -1,5 +1,3 @@
-require 'pry'
-
 class LeapYear
 
   def predict(number_of_leaps)
