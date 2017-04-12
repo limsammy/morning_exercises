@@ -1,7 +1,7 @@
 require 'pry'
 
 class RPN
-  attr_reader :first_val, :second_val
+  attr_reader :first_val, :second_val, :operator
 
   def initialize
     @first_val = nil

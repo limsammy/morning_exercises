@@ -21,6 +21,11 @@ class RPNTest < Minitest::Test
     assert_equal 6, @rpn.second_val
   end
 
+  def test_calc_func_assigns_operator_to_instance_var
+    @rpn.calc('1 2 +')
+    assert_equal '+', @rpn.operator
+  end
+
   def test_calc_func_parses_string_nums_into_fixnums
     @rpn.calc('1 2')
     assert_equal 1, @rpn.first_val
