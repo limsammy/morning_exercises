@@ -10,11 +10,10 @@ class RPN
 
   def calc(expression)
     expression_collection = expression.split(' ')
-    @operator = expression_collection.last
+    @operator = expression_collection.pop
     expression_collection.each do |val|
       @nums << val.to_i
     end
-    @nums.pop
     evaluate(@operator, @nums)
   end
 
