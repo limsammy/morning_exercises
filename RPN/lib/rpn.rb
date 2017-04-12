@@ -1,27 +1,28 @@
 require 'pry'
 
 class RPN
-  attr_reader :first_val, :second_val, :operator
+  attr_reader :operator, :nums
 
   def initialize
-    @first_val = nil
-    @second_val = nil
     @operator = nil
+    @nums = []
   end
 
   def calc(expression)
     expression_collection = expression.split(' ')
-    @first_val = expression_collection.first.to_i
-    @second_val = expression_collection[1].to_i
     @operator = expression_collection.last
-    check_operator(@operator)
+    expression_collection.each do |val|
+      @nums << val.to_i
+    end
+    @nums.pop
+    evaluate(@operator, @nums)
   end
 
-  def check_operator(operator)
+  def evaluate(operator, collection)
     if @operator == '+'
-      first_val + second_val
+      @nums.inject(:+)
     elsif @operator == '-'
-      first_val - second_val
+      @nums.inject(:-)
     end
   end
 end
