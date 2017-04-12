@@ -16,4 +16,16 @@ class TextScannerTest < Minitest::Test
 
     assert_nil text_scan.file
   end
+
+  def test_word_count_returns_hash
+    text_scan = TextScanner.new('alice.txt')
+
+    assert_instance_of Hash, text_scan.word_count
+  end
+
+  def test_read_file_returns_string
+    text_scan = TextScanner.new('alice.txt')
+
+    assert_instance_of String, text_scan.read
+  end
 end
